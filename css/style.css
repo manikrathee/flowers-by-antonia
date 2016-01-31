@@ -469,11 +469,6 @@ table {
   border-spacing: 0;
 }
 
-.container {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 .row {
   width: 100%;
   max-width: 1140px;
@@ -3731,7 +3726,8 @@ a {
   -o-transition: color 0.25s linear;
   transition: color 0.25s linear;
 }
-body.no-touch a:hover {
+
+html.no-touch a:hover {
   color: #534549;
 }
 
@@ -3764,12 +3760,16 @@ p {
   -o-transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
   transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
 }
-body.no-touch .button:hover {
+
+html.no-touch .button:hover {
   background: #cbafa1;
   color: #6f5c62;
 }
 
 #main {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3840,8 +3840,9 @@ h2 span {
   top: 70%;
   left: 50%;
   transform: translate(-50%, 0);
-  width: auto;
+  width: 100%;
   overflow: hidden;
+  text-align: center;
 }
 #main-navigation ul {
   width: 100%;
@@ -3850,15 +3851,19 @@ h2 span {
 }
 #main-navigation li {
   list-style-type: none;
-  display: block;
-  width: auto;
+  display: inline;
   text-align: center;
   margin-right: 40px;
-  float: left;
   text-align: left;
+}
+#main-navigation li:last-child {
+  margin-right: 0;
 }
 
 .image-panel {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
   background-position: center top;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -3881,7 +3886,7 @@ h2 span {
 
 @media (min-width: 768px) {
   .button {
-    margin: 80px auto 0;
+    margin: 60px auto 20px;
   }
 
   #main {
@@ -3896,11 +3901,55 @@ h2 span {
   #header .logo {
     width: 308px;
     height: 99px;
+    transform: translate(-50%, -100%);
   }
 
   #main-navigation {
     display: block;
     z-index: 99;
+  }
+
+  .image-panel {
+    overflow: hidden;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background-size: 59%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .image-panel header {
+    width: 41%;
+    padding: 10% 0;
+  }
+  .image-panel h2 {
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .weddings {
+    background-image: url("../img/wedding-bg-tablet.jpg");
+    background-position: right center;
+  }
+
+  .special-events {
+    background-image: url("../img/special-events-bg-tablet.jpg");
+    background-position: left center;
+  }
+  .special-events header {
+    padding-left: 59%;
+  }
+}
+@media (min-width: 930px) {
+  .image-panel h2 {
+    font-size: 28px;
+  }
+}
+@media (min-width: 1040px) {
+  .image-panel h2 {
+    font-size: 30px;
   }
 }
 

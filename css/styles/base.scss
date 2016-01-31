@@ -39,11 +39,10 @@ a {
   text-decoration: none;
   color: $main-color;
   @include transition(color 0.25s linear);
-
-  body.no-touch & {
-    &:hover {
-      color: darken($main-color, 10%);
-    }
+}
+html.no-touch {
+  a:hover {
+    color: darken($main-color, 10%);
   }
 }
 
@@ -71,17 +70,20 @@ p {
   @include box;
   @include transition( (background 0.25s ease-in-out),(color 0.25s ease-in-out) );
 
-  body.no-touch & {
-    &:hover {
-      background: $main-pink;
-      color: $main-color;
-    }
+}
+html.no-touch {
+  .button:hover {
+    background: $main-pink;
+    color: $main-color;
   }
 }
 
 
 
 #main {
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
   @include box;
   @include transition(border 0.25s ease-out);
 }
@@ -147,8 +149,10 @@ h2  {
   top: 70%;
   left: 50%;
   transform: translate(-50%, 0);
-  width: auto;
+  width: 100%;
   overflow: hidden;
+  text-align: center;
+
   ul {
     width: 100%;
     margin: 0;
@@ -157,17 +161,23 @@ h2  {
 
   li {
     list-style-type: none;
-    display: block;
-    width: auto;
+    display: inline;
     text-align: center;
     margin-right: 40px;
-    float: left;
     text-align: left;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
 }
 
 .image-panel {
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+
   background-position: center top;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -207,7 +217,7 @@ h2  {
 @media (min-width: 768px) {
 
   .button {
-    margin: 80px auto 0;
+    margin: 60px auto 20px;
   }
 
   #main {
@@ -222,6 +232,7 @@ h2  {
     .logo {
       width: 308px;
       height: 99px;
+      transform: translate(-50%, -100%);
     }
 
   }
@@ -229,6 +240,80 @@ h2  {
   #main-navigation {
     display: block;
     z-index: 99;
+  }
+
+  .image-panel {
+    overflow: hidden;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    background-size: 59%;
+    @include box;
+
+    header {
+      width: 41%;
+      padding: 10% 0;
+    }
+
+    h2 {
+      font-size: 21px;
+      text-align: center;
+    }
+  }
+
+  .weddings {
+    background-image: url('#{$imagePath}/wedding-bg-tablet.jpg');
+    background-position: right center;
+
+
+  }
+
+  .special-events {
+    background-image: url('#{$imagePath}/special-events-bg-tablet.jpg');
+    background-position: left center;
+
+    header {
+      padding-left: 59%;
+    }
+
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+@media (min-width: 930px) {
+
+  .image-panel {
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1040px) {
+
+  .image-panel {
+    h2 {
+      font-size: 30px;
+    }
   }
 
 }
