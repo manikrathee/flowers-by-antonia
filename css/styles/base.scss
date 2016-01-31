@@ -52,8 +52,15 @@ a {
   font-size: 16px;
 }
 
+h1,
+h2,
 p {
   color: $main-color;
+  -moz-font-feature-settings:"kern" 1, "liga" 1, "dlig" 1, "hlig" 1, "clig" 1, "swsh" 1, "calt" 1, "hist" 1, "salt" 1;
+  -ms-font-feature-settings:"kern" 1, "liga" 1, "dlig" 1, "hlig" 1, "clig" 1, "swsh" 1, "calt" 1, "hist" 1, "salt" 1;
+  -o-font-feature-settings:"kern" 1, "liga" 1, "dlig" 1, "hlig" 1, "clig" 1, "swsh" 1, "calt" 1, "hist" 1, "salt" 1;
+  -webkit-font-feature-settings:"kern" 1, "liga" 1, "dlig" 1, "hlig" 1, "clig" 1, "swsh" 1, "calt" 1, "hist" 1, "salt" 1;
+  font-feature-settings:"kern" 1, "liga" 1, "dlig" 1, "hlig" 1, "clig" 1, "swsh" 1, "calt" 1, "hist" 1, "salt" 1;
 }
 
 
