@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          '/css/style.css' : ['/css/style.scss']
+          'css/style.css' : ['css/style.scss']
         },
         options: {
           style: 'expanded'
@@ -11,53 +11,37 @@ module.exports = function(grunt) {
       },
     },
     watch: {
-      files: ['*/**'],
-      tasks: ['sass','concat'],
+      files: ['css/**'],
+      tasks: ['sass'],
     },
     cssmin: {
       minify: {
-        src: ['/css/style.css'],
-        dest: '/css/style.css',
+        src: ['css/style.css'],
+        dest: 'css/style.css',
       }
     },
     uglify: {
       my_target: {
         files: {
-          '/js/script.js' : ['/js/script.js'],
+          'js/script.js' : ['js/script.js'],
         }
       }
     },
-    jekyll: {
-      dist: {
-        options: {
-          config: '_config.yml'
-        }
+    serve: {
+      options: {
+        port: 9000
       }
-    },
-    imagemin: {
-      dynamic: {
-        options: {
-          optimizationLevel: 7,
-          progressive: true,
-        },
-        files: [{
-          expand: true,
-          cwd: '/img/',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: '/img/'
-        }]
-      }
-    },
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-serve');
 
-  grunt.registerTask('default', ['sass','concat']);
-  grunt.registerTask('w', ['sass','concat','watch']);
-  grunt.registerTask('production', ['sass','concat','cssmin','uglify','imagemin']);
+  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('server', ['serve']);
+  grunt.registerTask('w', ['sass','watch']);
+  grunt.registerTask('production', ['sass','cssmin','uglify']);
 };

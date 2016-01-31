@@ -1,32 +1,20 @@
 /* Base Styles */
 
-/* Variables */
   // Color
-  $white: rgba(255,255,255,1); /* #ffffff */
-  $off-white: rgba(243,243,243,1); /* #f3f3f3 */
-  $black: rgba(21,19,20,1); /* #151314 */
-  $grey: rgba(136,136,136,1); /* #888888 */
+  $main-color: rgba(111,92,98,1);
+  $main-pink: rgba(203,175,161,1);
+  $accent-color: rgba(203,175,161,1);
+  // $accent-color: rgba(222,120,152,1);
 
   // TypeKit
-  $sans:  'Lato', helvetica, Tahoma, Arial, sans-serif;
-  $serif: 'Playfair Display', Georgia, Cambria, "Times New Roman", Times, serif;
+  $sans:  Lato, helvetica, Tahoma, Arial, sans-serif;
+  $serif: Playfair Display, Georgia, Cambria, Times, serif;
+
+  $imagePath: "../img";
 
 
 
 
-  // Elements
-  $divider: 1px solid rgba(229,229,229,1); /* #E5E5E5 */
-
-  // Symbolset
-  .ss-icon {
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: none;
-    text-rendering: optimizeLegibility;
-    white-space: nowrap;
-    -webkit-font-smoothing: antialiased;
-    vertical-align: middle;
-  }
 
 
 // Highlights
@@ -39,25 +27,208 @@ a:link { -webkit-tap-highlight-color: none; }
 html, body {
 }
 body {
+  background: #F3F3F3;
   -webkit-backface-visibility: hidden;
-  /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
   text-rendering: optimizelegibility;
-
-  // HiDPI/Retina Media Query
-  @include hdpi {
-    background-image:  url('../img/');
-  }
+  font-family: $sans;
+  font-size: 10px;
+  color: $main-color;
 }
 
 a {
   text-decoration: none;
+  color: $main-color;
   @include transition(color 0.25s linear);
-  &:hover {
 
+  body.no-touch & {
+    &:hover {
+      color: darken($main-color, 10%);
+    }
   }
 }
 
-dl, menu, ol, ul {
+p,
+a {
+  font-family: $sans;
+  font-size: 16px;
+}
+
+p {
+  color: $main-color;
+}
+
+
+.button {
+  display: block;
+  margin: 30px auto 0;
+  width: 250px;
+  text-align: center;
+
+  background: transparent;
+  border: 10px solid $main-pink;
+  color: $main-pink;
+  padding: 20px 40px;
+  @include box;
+  @include transition( (background 0.25s ease-in-out),(color 0.25s ease-in-out) );
+
+  body.no-touch & {
+    &:hover {
+      background: $main-pink;
+      color: $main-color;
+    }
+  }
+}
+
+
+
+#main {
+  @include box;
+  @include transition(border 0.25s ease-out);
+}
+
+
+.logo {
+  display: block;
+  background: transparent url('#{$imagePath}/logo.png');
+  background-size: 100%;
+
+  text-indent: -999em;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  text-align: left;
+  direction: ltr;
+
+  @include transition( (height 0.25s ease-out),(width 0.25s ease-out) );
+}
+
+
+#header {
+  position: relative;
+  background: transparent url('#{$imagePath}/header-bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  padding: 140px 0;
+
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 185px;
+    height: 59px;
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+h1,
+h2  {
+  font-family: $serif;
+  font-size: 26px;
+  letter-spacing: 1.1px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+
+  span {
+    display: block;
+    margin-bottom: -2px;
+    font-family: $sans;
+    color: $accent-color;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-style: normal;
+    text-transform: uppercase;
+  }
+}
+
+#main-navigation {
+  display: none;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: auto;
+  overflow: hidden;
+  ul {
+    width: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    display: block;
+    width: auto;
+    text-align: center;
+    margin-right: 40px;
+    float: left;
+    text-align: left;
+  }
+
+}
+
+.image-panel {
+  background-position: center top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 210px 0 20px 0px;
+  border-top: 10px solid #fff;
+}
+
+.standard-panel {
+  padding: 210px 0 20px 0px;
+  border-top: 10px solid #fff;
+}
+
+.weddings {
+  background-image: url('#{$imagePath}/wedding-bg.jpg');
+
+}
+
+.special-events {
+  background-image: url('#{$imagePath}/special-events-bg.jpg');
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+  .button {
+    margin: 80px auto 0;
+  }
+
+  #main {
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
+  }
+
+  #header {
+    min-height: 570px;
+    padding: 0;
+
+    .logo {
+      width: 308px;
+      height: 99px;
+    }
+
+  }
+
+  #main-navigation {
+    display: block;
+    z-index: 99;
+  }
+
 }
