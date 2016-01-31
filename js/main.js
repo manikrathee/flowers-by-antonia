@@ -6,11 +6,6 @@
  */
 
 
-var win   = $(window);
-var doc   = $(document);
-var body  = $('body');
-var $self = $(this);
-
 
 /*  Google Analytics  */
 var googleAnalyticsID = 'UA-';
