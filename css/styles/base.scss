@@ -2,9 +2,10 @@
 
   // Color
   $main-color: rgba(111,92,98,1);
-  $main-pink: rgba(203,175,161,1);
-  $accent-color: rgba(203,175,161,1);
-  // $accent-color: rgba(222,120,152,1);
+  // $main-pink: rgba(203,175,161,1);
+  $main-pink: rgba(222,120,152,1);
+  // $accent-color: rgba(203,175,161,1);
+  $accent-color: rgba(222,120,152,1);
 
   // TypeKit
   $sans:  Lato, helvetica, Tahoma, Arial, sans-serif;
@@ -81,7 +82,7 @@ p {
 html.no-touch {
   .button:hover {
     background: $main-pink;
-    color: $main-color;
+    color: mix(white, $main-pink, 70%);
   }
 }
 
@@ -142,7 +143,8 @@ h2  {
     display: block;
     margin-bottom: -2px;
     font-family: $sans;
-    color: $accent-color;
+    // color: $accent-color;
+    color: $main-pink;
     font-size: 12px;
     letter-spacing: 1px;
     font-style: normal;
