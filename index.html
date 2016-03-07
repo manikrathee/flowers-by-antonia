@@ -40,6 +40,13 @@
 <body>
   <div id="main" class="container">
 
+    <div id="thank-you">
+      <h2>
+        <span>Thanks for contacting us!</span>
+        We will be in touch soon.
+      </h2>
+    </div>
+
   	<header id="header" class="row">
 
   		<h1 class="logo">Flowers by antonia</h1>
@@ -54,9 +61,9 @@
             <a href="#special-events" title="Special Events" itemprop="url">Special Events</a>
           </li>
 
-          <li>
+          <!-- <li>
             <a href="#testimonials" title="Testimonials" itemprop="url">Testimonials</a>
-          </li>
+          </li> -->
 
           <li>
             <a href="#contact" title="Contact" itemprop="url">Contact</a>
@@ -71,8 +78,54 @@
           <span>Made With Love</span>
           For Your Wedding Day
         </h2>
-        <a href="#" class="button" title="View Wedding Gallery" itemprop="url">View Gallery</a>
+        <a href="#" id="toggle-wedding-gallery" class="button" title="View Wedding Gallery" itemprop="url">View Gallery</a>
       </header>
+
+      <div class="weddings-gallery touch-gallery">
+        <a class="first-gallery-item gallery-item" href="/img/galleries/wedding/wedding-1.jpg">
+          <img src="/img/galleries/wedding/thumbs/wedding-1.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/wedding/wedding-2.jpg">
+          <img src="/img/galleries/wedding/thumbs/wedding-2.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/wedding/wedding-3.jpg">
+          <img src="/img/galleries/wedding/thumbs/wedding-3.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/wedding/wedding-4.jpg">
+          <img src="/img/galleries/wedding/thumbs/wedding-4.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/wedding/wedding-5.jpg">
+          <img src="/img/galleries/wedding/thumbs/wedding-5.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/wedding/wedding-6.jpg">
+          <img src="/img/galleries/wedding/thumbs/wedding-6.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/wedding/wedding-7.jpg">
+          <img src="/img/galleries/wedding/thumbs/wedding-7.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/wedding/wedding-8.jpg">
+          <img src="/img/galleries/wedding/thumbs/wedding-8.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/wedding/wedding-9.jpg">
+          <img src="/img/galleries/wedding/thumbs/wedding-9.jpg">
+        </a>
+      </div>
     </section>
 
     <section id="special-events" class="special-events image-panel">
@@ -81,21 +134,80 @@
           <span>Made With Love</span>
           For Special Events
         </h2>
-        <a href="#" class="button" title="View Special Events Gallery" itemprop="url">View Gallery</a>
+        <a href="#" id="toggle-event-gallery" class="button" title="View event Gallery" itemprop="url">View Gallery</a>
       </header>
+
+      <div class="event-gallery touch-gallery">
+        <a class="first-gallery-item gallery-item" href="/img/galleries/event/event-1.jpg">
+          <img src="/img/galleries/event/thumbs/event-1.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/event/event-2.jpg">
+          <img src="/img/galleries/event/thumbs/event-2.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/event/event-3.jpg">
+          <img src="/img/galleries/event/thumbs/event-3.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/event/event-4.jpg">
+          <img src="/img/galleries/event/thumbs/event-4.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/event/event-5.jpg">
+          <img src="/img/galleries/event/thumbs/event-5.jpg">
+        </a>
+
+
+        <a class="gallery-item" href="/img/galleries/event/event-6.jpg">
+          <img src="/img/galleries/event/thumbs/event-6.jpg">
+        </a>
+      </div>
     </section>
 
     <section class="row testimonials">
 
     </section>
+
     <section id="contact" class="row contact-form">
 
+      <header class="header-spacer">
+        <h2>
+          <span>Let's find the right flowers for you!</span>
+          Contact Us Today!
+        </h2>
+      </header>
+
+      <form
+        id="contact_form"
+        action="//formspree.io/flowersbyantoniaconte@gmail.com"
+        method="POST"
+        autocomplete
+        >
+        <input id="catcher" type="text" name="_gotcha" />
+        <input type="text" class="text-field" name="name" required placeholder="Your name">
+        <input type="email" class="text-field"name="_replyto" required placeholder="Your email address">
+        <textarea class="text-field" name="message" maxlength="500" required placeholder="Tell us about your event!"></textarea>
+        <input class="button submit-button" type="submit" value="Send">
+        <input type="hidden" name="_subject" value="New inquiry from your website." />
+        <input type="hidden" name="_next" value="/?thank-you=true" />
+      </form>
     </section>
+
+    <footer id="footer" class="row">
+      <a href="#" class="button" title="Back to the top" itemprop="url">Back to the top</a>
+    </footer>
 
   </div>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.10.2.js"><\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+  <script src="js/libs.js"></script>
   <script src="js/script.js"></script>
 
 </body>
