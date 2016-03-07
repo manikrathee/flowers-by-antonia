@@ -4663,13 +4663,11 @@ h2 span {
 .image-panel {
   position: relative;
   max-width: 350px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 35px auto 55px;
   background-position: center top;
   background-size: 100%;
   background-repeat: no-repeat;
   padding: 210px 0 20px 0px;
-  border-top: 10px solid #fff;
 }
 
 .standard-panel {
@@ -4695,6 +4693,10 @@ h2 span {
   padding-top: 45px;
   padding-bottom: 45px;
   border-top: 10px solid #fff;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #contact_form {
@@ -4705,6 +4707,10 @@ h2 span {
   margin-right: auto;
   padding: 35px;
   border: 1px solid #DAD7D7;
+  display: block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 #contact_form .text-field {
   display: block;
@@ -4780,6 +4786,7 @@ h2 span {
     margin: 0;
     padding: 0;
     background-size: 59%;
+    border-top: 10px solid #fff;
     display: block;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

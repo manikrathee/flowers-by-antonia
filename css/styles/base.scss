@@ -194,14 +194,12 @@ h2  {
 .image-panel {
   position: relative;
   max-width: 350px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 35px auto 55px;
 
   background-position: center top;
   background-size: 100%;
   background-repeat: no-repeat;
   padding: 210px 0 20px 0px;
-  border-top: 10px solid #fff;
 }
 
 .standard-panel {
@@ -230,6 +228,7 @@ h2  {
   padding-top: 45px;
   padding-bottom: 45px;
   border-top: 10px solid #fff;
+  @include box;
 }
 #contact_form {
   background: #fff;
@@ -239,6 +238,7 @@ h2  {
   margin-right: auto;
   padding: 35px;
   border: 1px solid #DAD7D7;
+  @include box;
 
   .text-field {
     display: block;
@@ -321,6 +321,7 @@ h2  {
     margin: 0;
     padding: 0;
     background-size: 59%;
+    border-top: 10px solid #fff;
     @include box;
 
     header {
