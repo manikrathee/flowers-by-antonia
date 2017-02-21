@@ -6,7 +6,7 @@
   Manik Rathee
   Site: www.manikrathee.com
   Twitter: @manikrathee
-  Location: East Coast, USA
+  Location: California, USA
 
 
 /* SITE */
